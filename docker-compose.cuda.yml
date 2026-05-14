@@ -6,7 +6,7 @@ services:
       - "6767:8080"
     volumes:
       - scriberr_data:/app/data
-      - env_data:/app/whisperx-env
+      #- env_data:/app/whisperx-env -- "device or resource busy" because the startup attempts to delete a mount :) sick
     restart: unless-stopped
     deploy:
       resources:
