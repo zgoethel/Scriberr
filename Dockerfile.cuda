@@ -63,12 +63,6 @@ ENV PYTHONUNBUFFERED=1 \
   # PyTorch CUDA wheel version: cu126 for legacy GPUs (GTX 10-series through RTX 40-series)
   PYTORCH_CUDA_VERSION=cu126
 
-RUN apt-get update && apt-get install -y wget gnupg \
-  && wget https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/cuda-keyring_1.1-1_all.deb \
-  && dpkg -i cuda-keyring_1.1-1_all.deb \
-  && apt-get update \
-  && apt-get install -y libcudnn9
-
 WORKDIR /app
 
 # System deps: curl for uv install, ca-certs, ffmpeg for yt-dlp, git for git+ installs, gosu for user switching
